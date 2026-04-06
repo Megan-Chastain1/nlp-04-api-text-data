@@ -79,9 +79,13 @@ def run_transform(
         [
             pl.col("title").str.len_chars().alias("title_length"),
             pl.col("body").str.len_chars().alias("body_length"),
+            pl.col("body").str.split(" ").list.len().alias("word_count"),
         ]
     )
 
+    df = df.with_columns(
+        [(pl.col("body_length") / pl.col("word_count")).alias("avg_word_length")]
+    )
     LOG.info("Transformation complete.")
     LOG.info(f"DataFrame preview:\n{df.head()}")
     LOG.info("Sink: Polars DataFrame created")

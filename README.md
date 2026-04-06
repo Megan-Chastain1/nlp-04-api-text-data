@@ -194,3 +194,13 @@ so later steps can run without errors or unexpected results.
 In this project, validation is implemented directly,
 so all checks are visible, repeatable, and easy to review as part
 of the pipeline.
+
+## Update Stage 4
+- created a new column for word count:
+ pl.col("body").str.split(" ").list.len().alias("word_count"),
+        ]
+    )
+- Created an average for text in body using the new column "word count" and the column "body length:
+ df = df.with_columns(
+    (pl.col("body_length") / pl.col("word_count")).alias("avg_word_length")
+)

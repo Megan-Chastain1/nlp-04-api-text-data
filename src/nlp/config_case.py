@@ -54,4 +54,4 @@ PROCESSED_PATH: Path = DATA_PATH / "processed"
 # TODO: In your custom app, change the output file names from case_
 # to something that represents YOUR custom project.
 RAW_JSON_PATH: Path = RAW_PATH / "case_raw.json"
-PROCESSED_CSV_PATH: Path = PROCESSED_PATH / "case_processed.csv"
+PROCESSED_CSV_PATH: Path = PROCESSED_PATH / "chastain_processed.csv"
