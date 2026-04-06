@@ -227,3 +227,585 @@ shape: (5, 8)
 2026-04-05 21:09:23 | INFO | CI | ========================
 2026-04-05 21:09:23 | INFO | CI | Pipeline executed successfully!
 2026-04-05 21:09:23 | INFO | CI | ========================
+2026-04-05 21:38:58 | INFO | CI | === RUN START ===
+2026-04-05 21:38:58 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 21:38:58 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 21:38:58 | INFO | CI | python=3.14.2
+2026-04-05 21:38:58 | INFO | CI | os=Windows 10
+2026-04-05 21:38:58 | INFO | CI | shell=powershell
+2026-04-05 21:38:58 | INFO | CI | cwd=.
+2026-04-05 21:38:58 | INFO | CI | github_actions=False
+2026-04-05 21:38:58 | INFO | CI | START PIPELINE
+2026-04-05 21:38:58 | INFO | CI | ROOT_PATH = .
+2026-04-05 21:38:58 | INFO | CI | DATA_PATH = data
+2026-04-05 21:38:58 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 21:38:58 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 21:38:58 | INFO | CI | ========================
+2026-04-05 21:38:58 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 21:38:58 | INFO | CI | ========================
+2026-04-05 21:38:58 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 21:38:58 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 21:38:58 | INFO | CI | ========================
+2026-04-05 21:38:58 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 21:38:58 | INFO | CI | ========================
+2026-04-05 21:38:58 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 21:38:58 | INFO | CI | Top-level type: list
+2026-04-05 21:38:58 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 21:38:58 | INFO | CI | Field types:
+2026-04-05 21:38:58 | INFO | CI | userId: int
+2026-04-05 21:38:58 | INFO | CI | id: int
+2026-04-05 21:38:58 | INFO | CI | title: str
+2026-04-05 21:38:58 | INFO | CI | body: str
+2026-04-05 21:38:58 | INFO | CI | Validation passed.
+2026-04-05 21:38:58 | INFO | CI | Sink: validated JSON object
+2026-04-05 21:38:58 | INFO | CI | ========================
+2026-04-05 21:38:58 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 21:38:58 | INFO | CI | ========================
+2026-04-05 21:38:58 | INFO | CI | Transformation complete.
+2026-04-05 21:38:58 | INFO | CI | DataFrame preview:
+shape: (5, 8)
+┌─────────┬─────────┬──────────────────┬─────────────────┬──────────────┬─────────────┬────────────┬─────────────────┐
+│ user_id ┆ post_id ┆ title            ┆ body            ┆ title_length ┆ body_length ┆ word_count ┆ avg_word_length │
+│ ---     ┆ ---     ┆ ---              ┆ ---             ┆ ---          ┆ ---         ┆ ---        ┆ ---             │
+│ i64     ┆ i64     ┆ str              ┆ str             ┆ u32          ┆ u32         ┆ u64        ┆ f64             │
+╞═════════╪═════════╪══════════════════╪═════════════════╪══════════════╪═════════════╪════════════╪═════════════════╡
+│ 1       ┆ 1       ┆ sunt aut facere  ┆ quia et         ┆ 74           ┆ 158         ┆ 20         ┆ 7.9             │
+│         ┆         ┆ repellat provi…  ┆ suscipit        ┆              ┆             ┆            ┆                 │
+│         ┆         ┆                  ┆ suscipit recu…  ┆              ┆             ┆            ┆                 │
+│ 1       ┆ 2       ┆ qui est esse     ┆ est rerum       ┆ 12           ┆ 206         ┆ 28         ┆ 7.357143        │
+│         ┆         ┆                  ┆ tempore vitae   ┆              ┆             ┆            ┆                 │
+│         ┆         ┆                  ┆ sequi …         ┆              ┆             ┆            ┆                 │
+│ 1       ┆ 3       ┆ ea molestias     ┆ et iusto sed    ┆ 59           ┆ 164         ┆ 23         ┆ 7.130435        │
+│         ┆         ┆ quasi            ┆ quo iure        ┆              ┆             ┆            ┆                 │
+│         ┆         ┆ exercitatio…     ┆ voluptat…       ┆              ┆             ┆            ┆                 │
+│ 1       ┆ 4       ┆ eum et est       ┆ ullam et saepe  ┆ 20           ┆ 190         ┆ 25         ┆ 7.6             │
+│         ┆         ┆ occaecati        ┆ reiciendis      ┆              ┆             ┆            ┆                 │
+│         ┆         ┆                  ┆ volu…           ┆              ┆             ┆            ┆                 │
+│ 1       ┆ 5       ┆ nesciunt quas    ┆ repudiandae     ┆ 18           ┆ 147         ┆ 20         ┆ 7.35            │
+│         ┆         ┆ odio             ┆ veniam quaerat  ┆              ┆             ┆            ┆                 │
+│         ┆         ┆                  ┆ sun…            ┆              ┆             ┆            ┆                 │
+└─────────┴─────────┴──────────────────┴─────────────────┴──────────────┴─────────────┴────────────┴─────────────────┘
+2026-04-05 21:38:58 | INFO | CI | Sink: Polars DataFrame created
+2026-04-05 21:38:58 | INFO | CI | ========================
+2026-04-05 21:38:58 | INFO | CI | STAGE 04: LOAD starting...
+2026-04-05 21:38:58 | INFO | CI | ========================
+2026-04-05 21:38:58 | INFO | CI | SINK PATH = data\processed\chastain_processed.csv
+2026-04-05 21:38:58 | INFO | CI | ========================
+2026-04-05 21:38:58 | INFO | CI | Pipeline executed successfully!
+2026-04-05 21:38:58 | INFO | CI | ========================
+2026-04-05 21:44:27 | INFO | CI | === RUN START ===
+2026-04-05 21:44:27 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 21:44:27 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 21:44:27 | INFO | CI | python=3.14.2
+2026-04-05 21:44:27 | INFO | CI | os=Windows 10
+2026-04-05 21:44:27 | INFO | CI | shell=powershell
+2026-04-05 21:44:27 | INFO | CI | cwd=.
+2026-04-05 21:44:27 | INFO | CI | github_actions=False
+2026-04-05 21:44:27 | INFO | CI | START PIPELINE
+2026-04-05 21:44:27 | INFO | CI | ROOT_PATH = .
+2026-04-05 21:44:27 | INFO | CI | DATA_PATH = data
+2026-04-05 21:44:27 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 21:44:27 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 21:44:27 | INFO | CI | ========================
+2026-04-05 21:44:27 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 21:44:27 | INFO | CI | ========================
+2026-04-05 21:44:28 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 21:44:28 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 21:44:28 | INFO | CI | ========================
+2026-04-05 21:44:28 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 21:44:28 | INFO | CI | ========================
+2026-04-05 21:44:28 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 21:44:28 | INFO | CI | Top-level type: list
+2026-04-05 21:44:28 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 21:44:28 | INFO | CI | Field types:
+2026-04-05 21:44:28 | INFO | CI | userId: int
+2026-04-05 21:44:28 | INFO | CI | id: int
+2026-04-05 21:44:28 | INFO | CI | title: str
+2026-04-05 21:44:28 | INFO | CI | body: str
+2026-04-05 21:44:28 | INFO | CI | Validation passed.
+2026-04-05 21:44:28 | INFO | CI | Sink: validated JSON object
+2026-04-05 21:44:28 | INFO | CI | ========================
+2026-04-05 21:44:28 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 21:44:28 | INFO | CI | ========================
+2026-04-05 21:44:28 | INFO | CI | Transformation complete.
+2026-04-05 21:44:28 | INFO | CI | DataFrame preview:
+shape: (5, 8)
+┌─────────┬─────────┬──────────────┬─────────────┬─────────────┬─────────────┬────────────┬─────────────┐
+│ user_id ┆ post_id ┆ title        ┆ body        ┆ title_lengt ┆ body_length ┆ word_count ┆ avg_word_le │
+│ ---     ┆ ---     ┆ ---          ┆ ---         ┆ h           ┆ ---         ┆ ---        ┆ ngth        │
+│ i64     ┆ i64     ┆ str          ┆ str         ┆ ---         ┆ u32         ┆ u64        ┆ ---         │
+│         ┆         ┆              ┆             ┆ u32         ┆             ┆            ┆ f64         │
+╞═════════╪═════════╪══════════════╪═════════════╪═════════════╪═════════════╪════════════╪═════════════╡
+│ 1       ┆ 1       ┆ sunt aut     ┆ quia et     ┆ 74          ┆ 158         ┆ 20         ┆ 7.9         │
+│         ┆         ┆ facere       ┆ suscipit    ┆             ┆             ┆            ┆             │
+│         ┆         ┆ repellat     ┆ suscipit    ┆             ┆             ┆            ┆             │
+│         ┆         ┆ provi…       ┆ recu…       ┆             ┆             ┆            ┆             │
+│ 1       ┆ 2       ┆ qui est esse ┆ est rerum   ┆ 12          ┆ 206         ┆ 28         ┆ 7.357143    │
+│         ┆         ┆              ┆ tempore     ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ vitae       ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ sequi …     ┆             ┆             ┆            ┆             │
+│ 1       ┆ 3       ┆ ea molestias ┆ et iusto    ┆ 59          ┆ 164         ┆ 23         ┆ 7.130435    │
+│         ┆         ┆ quasi        ┆ sed quo     ┆             ┆             ┆            ┆             │
+│         ┆         ┆ exercitatio… ┆ iure        ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ voluptat…   ┆             ┆             ┆            ┆             │
+│ 1       ┆ 4       ┆ eum et est   ┆ ullam et    ┆ 20          ┆ 190         ┆ 25         ┆ 7.6         │
+│         ┆         ┆ occaecati    ┆ saepe       ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ reiciendis  ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ volu…       ┆             ┆             ┆            ┆             │
+│ 1       ┆ 5       ┆ nesciunt     ┆ repudiandae ┆ 18          ┆ 147         ┆ 20         ┆ 7.35        │
+│         ┆         ┆ quas odio    ┆ veniam      ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ quaerat     ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ sun…        ┆             ┆             ┆            ┆             │
+└─────────┴─────────┴──────────────┴─────────────┴─────────────┴─────────────┴────────────┴─────────────┘
+2026-04-05 21:44:28 | INFO | CI | Sink: Polars DataFrame created
+2026-04-05 21:44:28 | INFO | CI | ========================
+2026-04-05 21:44:28 | INFO | CI | STAGE 04: LOAD starting...
+2026-04-05 21:44:28 | INFO | CI | ========================
+2026-04-05 21:44:28 | INFO | CI | SINK PATH = data\processed\chastain_processed.csv
+2026-04-05 21:44:28 | INFO | CI | ========================
+2026-04-05 21:44:28 | INFO | CI | Pipeline executed successfully!
+2026-04-05 21:44:28 | INFO | CI | ========================
+2026-04-05 21:47:13 | INFO | CI | === RUN START ===
+2026-04-05 21:47:13 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 21:47:13 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 21:47:13 | INFO | CI | python=3.14.2
+2026-04-05 21:47:13 | INFO | CI | os=Windows 10
+2026-04-05 21:47:13 | INFO | CI | shell=powershell
+2026-04-05 21:47:13 | INFO | CI | cwd=.
+2026-04-05 21:47:13 | INFO | CI | github_actions=False
+2026-04-05 21:47:13 | INFO | CI | START PIPELINE
+2026-04-05 21:47:13 | INFO | CI | ROOT_PATH = .
+2026-04-05 21:47:13 | INFO | CI | DATA_PATH = data
+2026-04-05 21:47:13 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 21:47:14 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 21:47:14 | INFO | CI | ========================
+2026-04-05 21:47:14 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 21:47:14 | INFO | CI | ========================
+2026-04-05 21:47:14 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 21:47:14 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 21:47:14 | INFO | CI | ========================
+2026-04-05 21:47:14 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 21:47:14 | INFO | CI | ========================
+2026-04-05 21:47:14 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 21:47:14 | INFO | CI | Top-level type: list
+2026-04-05 21:47:14 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 21:47:14 | INFO | CI | Field types:
+2026-04-05 21:47:14 | INFO | CI | userId: int
+2026-04-05 21:47:14 | INFO | CI | id: int
+2026-04-05 21:47:14 | INFO | CI | title: str
+2026-04-05 21:47:14 | INFO | CI | body: str
+2026-04-05 21:47:14 | INFO | CI | Validation passed.
+2026-04-05 21:47:14 | INFO | CI | Sink: validated JSON object
+2026-04-05 21:47:14 | INFO | CI | ========================
+2026-04-05 21:47:14 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 21:47:14 | INFO | CI | ========================
+2026-04-05 21:47:14 | INFO | CI | Transformation complete.
+2026-04-05 21:47:14 | INFO | CI | DataFrame preview:
+shape: (5, 8)
+┌─────────┬─────────┬──────────────┬─────────────┬─────────────┬─────────────┬────────────┬─────────────┐
+│ user_id ┆ post_id ┆ title        ┆ body        ┆ title_lengt ┆ body_length ┆ word_count ┆ avg_word_le │
+│ ---     ┆ ---     ┆ ---          ┆ ---         ┆ h           ┆ ---         ┆ ---        ┆ ngth        │
+│ i64     ┆ i64     ┆ str          ┆ str         ┆ ---         ┆ u32         ┆ u64        ┆ ---         │
+│         ┆         ┆              ┆             ┆ u32         ┆             ┆            ┆ f64         │
+╞═════════╪═════════╪══════════════╪═════════════╪═════════════╪═════════════╪════════════╪═════════════╡
+│ 1       ┆ 1       ┆ sunt aut     ┆ quia et     ┆ 74          ┆ 158         ┆ 20         ┆ 7.9         │
+│         ┆         ┆ facere       ┆ suscipit    ┆             ┆             ┆            ┆             │
+│         ┆         ┆ repellat     ┆ suscipit    ┆             ┆             ┆            ┆             │
+│         ┆         ┆ provi…       ┆ recu…       ┆             ┆             ┆            ┆             │
+│ 1       ┆ 2       ┆ qui est esse ┆ est rerum   ┆ 12          ┆ 206         ┆ 28         ┆ 7.357143    │
+│         ┆         ┆              ┆ tempore     ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ vitae       ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ sequi …     ┆             ┆             ┆            ┆             │
+│ 1       ┆ 3       ┆ ea molestias ┆ et iusto    ┆ 59          ┆ 164         ┆ 23         ┆ 7.130435    │
+│         ┆         ┆ quasi        ┆ sed quo     ┆             ┆             ┆            ┆             │
+│         ┆         ┆ exercitatio… ┆ iure        ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ voluptat…   ┆             ┆             ┆            ┆             │
+│ 1       ┆ 4       ┆ eum et est   ┆ ullam et    ┆ 20          ┆ 190         ┆ 25         ┆ 7.6         │
+│         ┆         ┆ occaecati    ┆ saepe       ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ reiciendis  ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ volu…       ┆             ┆             ┆            ┆             │
+│ 1       ┆ 5       ┆ nesciunt     ┆ repudiandae ┆ 18          ┆ 147         ┆ 20         ┆ 7.35        │
+│         ┆         ┆ quas odio    ┆ veniam      ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ quaerat     ┆             ┆             ┆            ┆             │
+│         ┆         ┆              ┆ sun…        ┆             ┆             ┆            ┆             │
+└─────────┴─────────┴──────────────┴─────────────┴─────────────┴─────────────┴────────────┴─────────────┘
+2026-04-05 21:47:14 | INFO | CI | Sink: Polars DataFrame created
+2026-04-05 21:47:14 | INFO | CI | ========================
+2026-04-05 21:47:14 | INFO | CI | STAGE 04: LOAD starting...
+2026-04-05 21:47:14 | INFO | CI | ========================
+2026-04-05 21:47:14 | INFO | CI | SINK PATH = data\processed\chastain_processed.csv
+2026-04-05 21:47:14 | INFO | CI | ========================
+2026-04-05 21:47:14 | INFO | CI | Pipeline executed successfully!
+2026-04-05 21:47:14 | INFO | CI | ========================
+2026-04-05 23:03:13 | INFO | CI | === RUN START ===
+2026-04-05 23:03:13 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 23:03:13 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 23:03:13 | INFO | CI | python=3.14.2
+2026-04-05 23:03:13 | INFO | CI | os=Windows 10
+2026-04-05 23:03:13 | INFO | CI | shell=powershell
+2026-04-05 23:03:13 | INFO | CI | cwd=.
+2026-04-05 23:03:13 | INFO | CI | github_actions=False
+2026-04-05 23:03:13 | INFO | CI | START PIPELINE
+2026-04-05 23:03:13 | INFO | CI | ROOT_PATH = .
+2026-04-05 23:03:13 | INFO | CI | DATA_PATH = data
+2026-04-05 23:03:13 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 23:03:13 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 23:03:13 | INFO | CI | ========================
+2026-04-05 23:03:13 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 23:03:13 | INFO | CI | ========================
+2026-04-05 23:03:13 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 23:03:13 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 23:03:13 | INFO | CI | ========================
+2026-04-05 23:03:13 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 23:03:13 | INFO | CI | ========================
+2026-04-05 23:03:13 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 23:03:13 | INFO | CI | Top-level type: list
+2026-04-05 23:03:13 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 23:03:13 | INFO | CI | Field types:
+2026-04-05 23:03:13 | INFO | CI | userId: int
+2026-04-05 23:03:13 | INFO | CI | id: int
+2026-04-05 23:03:13 | INFO | CI | title: str
+2026-04-05 23:03:13 | INFO | CI | body: str
+2026-04-05 23:03:13 | INFO | CI | Validation passed.
+2026-04-05 23:03:13 | INFO | CI | Sink: validated JSON object
+2026-04-05 23:03:13 | INFO | CI | ========================
+2026-04-05 23:03:13 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 23:03:13 | INFO | CI | ========================
+2026-04-05 23:05:54 | INFO | CI | === RUN START ===
+2026-04-05 23:05:54 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 23:05:54 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 23:05:54 | INFO | CI | python=3.14.2
+2026-04-05 23:05:54 | INFO | CI | os=Windows 10
+2026-04-05 23:05:54 | INFO | CI | shell=powershell
+2026-04-05 23:05:54 | INFO | CI | cwd=.
+2026-04-05 23:05:54 | INFO | CI | github_actions=False
+2026-04-05 23:05:54 | INFO | CI | START PIPELINE
+2026-04-05 23:05:54 | INFO | CI | ROOT_PATH = .
+2026-04-05 23:05:54 | INFO | CI | DATA_PATH = data
+2026-04-05 23:05:54 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 23:05:54 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 23:05:54 | INFO | CI | ========================
+2026-04-05 23:05:54 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 23:05:54 | INFO | CI | ========================
+2026-04-05 23:05:54 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 23:05:54 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 23:05:54 | INFO | CI | ========================
+2026-04-05 23:05:54 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 23:05:54 | INFO | CI | ========================
+2026-04-05 23:05:54 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 23:05:54 | INFO | CI | Top-level type: list
+2026-04-05 23:05:54 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 23:05:54 | INFO | CI | Field types:
+2026-04-05 23:05:54 | INFO | CI | userId: int
+2026-04-05 23:05:54 | INFO | CI | id: int
+2026-04-05 23:05:54 | INFO | CI | title: str
+2026-04-05 23:05:54 | INFO | CI | body: str
+2026-04-05 23:05:54 | INFO | CI | Validation passed.
+2026-04-05 23:05:54 | INFO | CI | Sink: validated JSON object
+2026-04-05 23:05:54 | INFO | CI | ========================
+2026-04-05 23:05:54 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 23:05:54 | INFO | CI | ========================
+2026-04-05 23:08:49 | INFO | CI | === RUN START ===
+2026-04-05 23:08:49 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 23:08:49 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 23:08:49 | INFO | CI | python=3.14.2
+2026-04-05 23:08:49 | INFO | CI | os=Windows 10
+2026-04-05 23:08:49 | INFO | CI | shell=powershell
+2026-04-05 23:08:49 | INFO | CI | cwd=.
+2026-04-05 23:08:49 | INFO | CI | github_actions=False
+2026-04-05 23:08:49 | INFO | CI | START PIPELINE
+2026-04-05 23:08:49 | INFO | CI | ROOT_PATH = .
+2026-04-05 23:08:49 | INFO | CI | DATA_PATH = data
+2026-04-05 23:08:49 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 23:08:49 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 23:08:49 | INFO | CI | ========================
+2026-04-05 23:08:49 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 23:08:49 | INFO | CI | ========================
+2026-04-05 23:08:50 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 23:08:50 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 23:08:50 | INFO | CI | ========================
+2026-04-05 23:08:50 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 23:08:50 | INFO | CI | ========================
+2026-04-05 23:08:50 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 23:08:50 | INFO | CI | Top-level type: list
+2026-04-05 23:08:50 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 23:08:50 | INFO | CI | Field types:
+2026-04-05 23:08:50 | INFO | CI | userId: int
+2026-04-05 23:08:50 | INFO | CI | id: int
+2026-04-05 23:08:50 | INFO | CI | title: str
+2026-04-05 23:08:50 | INFO | CI | body: str
+2026-04-05 23:08:50 | INFO | CI | Validation passed.
+2026-04-05 23:08:50 | INFO | CI | Sink: validated JSON object
+2026-04-05 23:08:50 | INFO | CI | ========================
+2026-04-05 23:08:50 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 23:08:50 | INFO | CI | ========================
+2026-04-05 23:09:13 | INFO | CI | === RUN START ===
+2026-04-05 23:09:13 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 23:09:13 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 23:09:13 | INFO | CI | python=3.14.2
+2026-04-05 23:09:13 | INFO | CI | os=Windows 10
+2026-04-05 23:09:13 | INFO | CI | shell=powershell
+2026-04-05 23:09:13 | INFO | CI | cwd=.
+2026-04-05 23:09:13 | INFO | CI | github_actions=False
+2026-04-05 23:09:13 | INFO | CI | START PIPELINE
+2026-04-05 23:09:13 | INFO | CI | ROOT_PATH = .
+2026-04-05 23:09:13 | INFO | CI | DATA_PATH = data
+2026-04-05 23:09:13 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 23:09:13 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 23:09:13 | INFO | CI | ========================
+2026-04-05 23:09:13 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 23:09:13 | INFO | CI | ========================
+2026-04-05 23:09:14 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 23:09:14 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 23:09:14 | INFO | CI | ========================
+2026-04-05 23:09:14 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 23:09:14 | INFO | CI | ========================
+2026-04-05 23:09:14 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 23:09:14 | INFO | CI | Top-level type: list
+2026-04-05 23:09:14 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 23:09:14 | INFO | CI | Field types:
+2026-04-05 23:09:14 | INFO | CI | userId: int
+2026-04-05 23:09:14 | INFO | CI | id: int
+2026-04-05 23:09:14 | INFO | CI | title: str
+2026-04-05 23:09:14 | INFO | CI | body: str
+2026-04-05 23:09:14 | INFO | CI | Validation passed.
+2026-04-05 23:09:14 | INFO | CI | Sink: validated JSON object
+2026-04-05 23:09:14 | INFO | CI | ========================
+2026-04-05 23:09:14 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 23:09:14 | INFO | CI | ========================
+2026-04-05 23:10:13 | INFO | CI | === RUN START ===
+2026-04-05 23:10:13 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 23:10:13 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 23:10:13 | INFO | CI | python=3.14.2
+2026-04-05 23:10:13 | INFO | CI | os=Windows 10
+2026-04-05 23:10:13 | INFO | CI | shell=powershell
+2026-04-05 23:10:13 | INFO | CI | cwd=.
+2026-04-05 23:10:13 | INFO | CI | github_actions=False
+2026-04-05 23:10:13 | INFO | CI | START PIPELINE
+2026-04-05 23:10:13 | INFO | CI | ROOT_PATH = .
+2026-04-05 23:10:13 | INFO | CI | DATA_PATH = data
+2026-04-05 23:10:13 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 23:10:13 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 23:10:13 | INFO | CI | ========================
+2026-04-05 23:10:13 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 23:10:13 | INFO | CI | ========================
+2026-04-05 23:10:13 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 23:10:13 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 23:10:13 | INFO | CI | ========================
+2026-04-05 23:10:13 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 23:10:13 | INFO | CI | ========================
+2026-04-05 23:10:13 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 23:10:13 | INFO | CI | Top-level type: list
+2026-04-05 23:10:13 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 23:10:13 | INFO | CI | Field types:
+2026-04-05 23:10:13 | INFO | CI | userId: int
+2026-04-05 23:10:13 | INFO | CI | id: int
+2026-04-05 23:10:13 | INFO | CI | title: str
+2026-04-05 23:10:13 | INFO | CI | body: str
+2026-04-05 23:10:13 | INFO | CI | Validation passed.
+2026-04-05 23:10:13 | INFO | CI | Sink: validated JSON object
+2026-04-05 23:10:13 | INFO | CI | ========================
+2026-04-05 23:10:13 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 23:10:13 | INFO | CI | ========================
+2026-04-05 23:11:08 | INFO | CI | === RUN START ===
+2026-04-05 23:11:08 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 23:11:08 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 23:11:08 | INFO | CI | python=3.14.2
+2026-04-05 23:11:08 | INFO | CI | os=Windows 10
+2026-04-05 23:11:08 | INFO | CI | shell=powershell
+2026-04-05 23:11:08 | INFO | CI | cwd=.
+2026-04-05 23:11:08 | INFO | CI | github_actions=False
+2026-04-05 23:11:08 | INFO | CI | START PIPELINE
+2026-04-05 23:11:08 | INFO | CI | ROOT_PATH = .
+2026-04-05 23:11:08 | INFO | CI | DATA_PATH = data
+2026-04-05 23:11:08 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 23:11:08 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 23:11:08 | INFO | CI | ========================
+2026-04-05 23:11:08 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 23:11:08 | INFO | CI | ========================
+2026-04-05 23:11:09 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 23:11:09 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 23:11:09 | INFO | CI | ========================
+2026-04-05 23:11:09 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 23:11:09 | INFO | CI | ========================
+2026-04-05 23:11:09 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 23:11:09 | INFO | CI | Top-level type: list
+2026-04-05 23:11:09 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 23:11:09 | INFO | CI | Field types:
+2026-04-05 23:11:09 | INFO | CI | userId: int
+2026-04-05 23:11:09 | INFO | CI | id: int
+2026-04-05 23:11:09 | INFO | CI | title: str
+2026-04-05 23:11:09 | INFO | CI | body: str
+2026-04-05 23:11:09 | INFO | CI | Validation passed.
+2026-04-05 23:11:09 | INFO | CI | Sink: validated JSON object
+2026-04-05 23:11:09 | INFO | CI | ========================
+2026-04-05 23:11:09 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 23:11:09 | INFO | CI | ========================
+2026-04-05 23:11:27 | INFO | CI | === RUN START ===
+2026-04-05 23:11:27 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 23:11:27 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 23:11:27 | INFO | CI | python=3.14.2
+2026-04-05 23:11:27 | INFO | CI | os=Windows 10
+2026-04-05 23:11:27 | INFO | CI | shell=powershell
+2026-04-05 23:11:27 | INFO | CI | cwd=.
+2026-04-05 23:11:27 | INFO | CI | github_actions=False
+2026-04-05 23:11:27 | INFO | CI | START PIPELINE
+2026-04-05 23:11:27 | INFO | CI | ROOT_PATH = .
+2026-04-05 23:11:27 | INFO | CI | DATA_PATH = data
+2026-04-05 23:11:27 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 23:11:27 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 23:11:27 | INFO | CI | ========================
+2026-04-05 23:11:27 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 23:11:27 | INFO | CI | ========================
+2026-04-05 23:11:27 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 23:11:27 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 23:11:27 | INFO | CI | ========================
+2026-04-05 23:11:27 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 23:11:27 | INFO | CI | ========================
+2026-04-05 23:11:27 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 23:11:27 | INFO | CI | Top-level type: list
+2026-04-05 23:11:27 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 23:11:27 | INFO | CI | Field types:
+2026-04-05 23:11:27 | INFO | CI | userId: int
+2026-04-05 23:11:27 | INFO | CI | id: int
+2026-04-05 23:11:27 | INFO | CI | title: str
+2026-04-05 23:11:27 | INFO | CI | body: str
+2026-04-05 23:11:27 | INFO | CI | Validation passed.
+2026-04-05 23:11:27 | INFO | CI | Sink: validated JSON object
+2026-04-05 23:11:27 | INFO | CI | ========================
+2026-04-05 23:11:27 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 23:11:27 | INFO | CI | ========================
+2026-04-05 23:13:02 | INFO | CI | === RUN START ===
+2026-04-05 23:13:02 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 23:13:02 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 23:13:02 | INFO | CI | python=3.14.2
+2026-04-05 23:13:02 | INFO | CI | os=Windows 10
+2026-04-05 23:13:02 | INFO | CI | shell=powershell
+2026-04-05 23:13:02 | INFO | CI | cwd=.
+2026-04-05 23:13:02 | INFO | CI | github_actions=False
+2026-04-05 23:13:02 | INFO | CI | START PIPELINE
+2026-04-05 23:13:02 | INFO | CI | ROOT_PATH = .
+2026-04-05 23:13:02 | INFO | CI | DATA_PATH = data
+2026-04-05 23:13:02 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 23:13:02 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 23:13:02 | INFO | CI | ========================
+2026-04-05 23:13:02 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 23:13:02 | INFO | CI | ========================
+2026-04-05 23:13:02 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 23:13:02 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 23:13:02 | INFO | CI | ========================
+2026-04-05 23:13:02 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 23:13:02 | INFO | CI | ========================
+2026-04-05 23:13:02 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 23:13:02 | INFO | CI | Top-level type: list
+2026-04-05 23:13:02 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 23:13:02 | INFO | CI | Field types:
+2026-04-05 23:13:02 | INFO | CI | userId: int
+2026-04-05 23:13:02 | INFO | CI | id: int
+2026-04-05 23:13:02 | INFO | CI | title: str
+2026-04-05 23:13:02 | INFO | CI | body: str
+2026-04-05 23:13:02 | INFO | CI | Validation passed.
+2026-04-05 23:13:02 | INFO | CI | Sink: validated JSON object
+2026-04-05 23:13:02 | INFO | CI | ========================
+2026-04-05 23:13:02 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 23:13:02 | INFO | CI | ========================
+2026-04-05 23:13:18 | INFO | CI | === RUN START ===
+2026-04-05 23:13:18 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 23:13:18 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 23:13:18 | INFO | CI | python=3.14.2
+2026-04-05 23:13:18 | INFO | CI | os=Windows 10
+2026-04-05 23:13:18 | INFO | CI | shell=powershell
+2026-04-05 23:13:18 | INFO | CI | cwd=.
+2026-04-05 23:13:18 | INFO | CI | github_actions=False
+2026-04-05 23:13:18 | INFO | CI | START PIPELINE
+2026-04-05 23:13:18 | INFO | CI | ROOT_PATH = .
+2026-04-05 23:13:18 | INFO | CI | DATA_PATH = data
+2026-04-05 23:13:18 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 23:13:18 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 23:13:18 | INFO | CI | ========================
+2026-04-05 23:13:18 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 23:13:18 | INFO | CI | ========================
+2026-04-05 23:13:18 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/posts
+2026-04-05 23:13:18 | INFO | CI | SINK PATH = data\raw\case_raw.json
+2026-04-05 23:13:18 | INFO | CI | ========================
+2026-04-05 23:13:18 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 23:13:18 | INFO | CI | ========================
+2026-04-05 23:13:18 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 23:13:18 | INFO | CI | Top-level type: list
+2026-04-05 23:13:18 | INFO | CI | Keys in first record: ['userId', 'id', 'title', 'body']
+2026-04-05 23:13:18 | INFO | CI | Field types:
+2026-04-05 23:13:18 | INFO | CI | userId: int
+2026-04-05 23:13:18 | INFO | CI | id: int
+2026-04-05 23:13:18 | INFO | CI | title: str
+2026-04-05 23:13:18 | INFO | CI | body: str
+2026-04-05 23:13:18 | INFO | CI | Validation passed.
+2026-04-05 23:13:18 | INFO | CI | Sink: validated JSON object
+2026-04-05 23:13:18 | INFO | CI | ========================
+2026-04-05 23:13:18 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 23:13:18 | INFO | CI | ========================
+2026-04-05 23:23:53 | INFO | CI | === RUN START ===
+2026-04-05 23:23:53 | INFO | CI | project=MODULE 4: EVTL PIPELINE
+2026-04-05 23:23:53 | INFO | CI | repo_dir=nlp-04-api-text-data
+2026-04-05 23:23:53 | INFO | CI | python=3.14.2
+2026-04-05 23:23:53 | INFO | CI | os=Windows 10
+2026-04-05 23:23:53 | INFO | CI | shell=powershell
+2026-04-05 23:23:53 | INFO | CI | cwd=.
+2026-04-05 23:23:53 | INFO | CI | github_actions=False
+2026-04-05 23:23:53 | INFO | CI | START PIPELINE
+2026-04-05 23:23:53 | INFO | CI | ROOT_PATH = .
+2026-04-05 23:23:53 | INFO | CI | DATA_PATH = data
+2026-04-05 23:23:53 | INFO | CI | RAW_PATH = data\raw
+2026-04-05 23:23:53 | INFO | CI | PROCESSED_PATH = data\processed
+2026-04-05 23:23:53 | INFO | CI | ========================
+2026-04-05 23:23:53 | INFO | CI | STAGE 01: EXTRACT starting... 
+2026-04-05 23:23:53 | INFO | CI | ========================
+2026-04-05 23:23:53 | INFO | CI | SOURCE PATH = https://jsonplaceholder.typicode.com/users
+2026-04-05 23:23:53 | INFO | CI | SINK PATH = data\raw\chastain_raw.json
+2026-04-05 23:23:53 | INFO | CI | ========================
+2026-04-05 23:23:53 | INFO | CI | STAGE 02: VALIDATE starting...
+2026-04-05 23:23:53 | INFO | CI | ========================
+2026-04-05 23:23:53 | INFO | CI | JSON STRUCTURE INSPECTION:
+2026-04-05 23:23:53 | INFO | CI | Top-level type: list
+2026-04-05 23:23:53 | INFO | CI | Keys in first record: ['id', 'name', 'username', 'email', 'address', 'phone', 'website', 'company']
+2026-04-05 23:23:53 | INFO | CI | Field types:
+2026-04-05 23:23:53 | INFO | CI | id: int
+2026-04-05 23:23:53 | INFO | CI | name: str
+2026-04-05 23:23:53 | INFO | CI | username: str
+2026-04-05 23:23:53 | INFO | CI | email: str
+2026-04-05 23:23:53 | INFO | CI | address: dict
+2026-04-05 23:23:53 | INFO | CI | phone: str
+2026-04-05 23:23:53 | INFO | CI | website: str
+2026-04-05 23:23:53 | INFO | CI | company: dict
+2026-04-05 23:23:53 | INFO | CI | Validation passed.
+2026-04-05 23:23:53 | INFO | CI | Sink: validated JSON object
+2026-04-05 23:23:53 | INFO | CI | ========================
+2026-04-05 23:23:53 | INFO | CI | STAGE 03: TRANSFORM starting...
+2026-04-05 23:23:53 | INFO | CI | ========================
+2026-04-05 23:23:53 | INFO | CI | Transformation complete.
+2026-04-05 23:23:53 | INFO | CI | DataFrame preview:
+shape: (5, 7)
+┌─────┬─────────────────┬────────────────┬───────────────┬────────────┬────────────────┬────────────────┐
+│ id  ┆ name            ┆ email          ┆ city          ┆ zipcode    ┆ most_lived_cit ┆ most_lived_cou │
+│ --- ┆ ---             ┆ ---            ┆ ---           ┆ ---        ┆ y              ┆ nt             │
+│ i64 ┆ str             ┆ str            ┆ str           ┆ str        ┆ ---            ┆ ---            │
+│     ┆                 ┆                ┆               ┆            ┆ str            ┆ u64            │
+╞═════╪═════════════════╪════════════════╪═══════════════╪════════════╪════════════════╪════════════════╡
+│ 1   ┆ Leanne Graham   ┆ Sincere@april. ┆ Gwenborough   ┆ 92998-3874 ┆ Gwenborough    ┆ 1              │
+│     ┆                 ┆ biz            ┆               ┆            ┆                ┆                │
+│ 2   ┆ Ervin Howell    ┆ Shanna@melissa ┆ Wisokyburgh   ┆ 90566-7771 ┆ Gwenborough    ┆ 1              │
+│     ┆                 ┆ .tv            ┆               ┆            ┆                ┆                │
+│ 3   ┆ Clementine      ┆ Nathan@yesenia ┆ McKenziehaven ┆ 59590-4157 ┆ Gwenborough    ┆ 1              │
+│     ┆ Bauch           ┆ .net           ┆               ┆            ┆                ┆                │
+│ 4   ┆ Patricia        ┆ Julianne.OConn ┆ South Elvis   ┆ 53919-4257 ┆ Gwenborough    ┆ 1              │
+│     ┆ Lebsack         ┆ er@kory.org    ┆               ┆            ┆                ┆                │
+│ 5   ┆ Chelsey         ┆ Lucio_Hettinge ┆ Roscoeview    ┆ 33263      ┆ Gwenborough    ┆ 1              │
+│     ┆ Dietrich        ┆ r@annie.ca     ┆               ┆            ┆                ┆                │
+└─────┴─────────────────┴────────────────┴───────────────┴────────────┴────────────────┴────────────────┘
+2026-04-05 23:23:53 | INFO | CI | Sink: Polars DataFrame created
+2026-04-05 23:23:53 | INFO | CI | ========================
+2026-04-05 23:23:53 | INFO | CI | STAGE 04: LOAD starting...
+2026-04-05 23:23:53 | INFO | CI | ========================
+2026-04-05 23:23:53 | INFO | CI | SINK PATH = data\processed\chastain_processed2.csv
+2026-04-05 23:23:53 | INFO | CI | ========================
+2026-04-05 23:23:53 | INFO | CI | Pipeline executed successfully!
+2026-04-05 23:23:53 | INFO | CI | ========================

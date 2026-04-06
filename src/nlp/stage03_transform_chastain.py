@@ -65,27 +65,19 @@ def run_transform(
     for record in json_data:
         records.append(
             {
-                "user_id": record["userId"],
-                "post_id": record["id"],
-                "title": record["title"],
-                "body": record["body"],
+                "id": record["id"],
+                "name": record["name"],
+                "email": record["email"],
+                "city": record["address"]["city"],
+                "zipcode": record["address"]["zipcode"],
             }
         )
 
     df: pl.DataFrame = pl.DataFrame(records)
 
     # Derived fields
-    df = df.with_columns(
-        [
-            pl.col("title").str.len_chars().alias("title_length"),
-            pl.col("body").str.len_chars().alias("body_length"),
-            pl.col("body").str.split(" ").list.len().alias("word_count"),
-        ]
-    )
-
-    df = df.with_columns(
-        [(pl.col("body_length") / pl.col("word_count")).alias("avg_word_length")]
-    )
+    df = df.with_columns(pl.col("city").mode().first().alias("most_lived_city"))
+    df = df.with_columns(most_lived_count=pl.col("city").count().over("city").max())
     LOG.info("Transformation complete.")
     LOG.info(f"DataFrame preview:\n{df.head()}")
     LOG.info("Sink: Polars DataFrame created")
